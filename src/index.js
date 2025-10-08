@@ -6,6 +6,8 @@ const path = require('path')
 const app = express()
 const port = process.env.PORT || 3000
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 // use absolute paths so views resolve correctly from src/
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
