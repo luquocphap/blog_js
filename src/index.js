@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000
 app.use(express.static(path.join(__dirname, 'public')))
 
 // use absolute paths so views resolve correctly from src/
-app.engine('hbs', engine());
+app.engine('hbs', engine({ extname: "hbs" }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 console.log(path.join(__dirname, 'resources', 'views'))
